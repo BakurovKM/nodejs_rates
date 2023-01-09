@@ -1,0 +1,46 @@
+{
+    "swagger":"2.0"
+    ,"info":{"description":"Rates API"
+    ,"version":"1.0"
+    ,"title":"Rates API"}
+    ,"host":"localhost:3000"
+    ,"basePath":"/"
+    ,"tags":[{"name":"Rates", "description":"Rates API"}]
+    ,"schemes":["http"]
+    ,"produces": ["application/json"],
+    "paths": {
+      "/rates": {
+        "get": {
+          "x-swagger-router-controller": "rates",
+          "operationId": "getAll",
+          "tags": ["Rates"],
+          "summary": "Get all rates",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Get all rates"
+            }
+          }
+        }
+      },
+      "/rates/{code}": {
+        "get": {
+          "x-swagger-router-controller": "rates",
+          "operationId": "getByCurrencyCode",
+          "tags": ["Rates"],
+          "summary": "Get rate by currency code",
+          "parameters": [ {
+            "name": "code",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }],
+          "responses": {
+            "200": {
+              "description": "Get reta by currency code"
+            }
+          }
+        }
+      }
+    }
+  }
