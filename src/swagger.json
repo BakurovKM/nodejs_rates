@@ -37,7 +37,21 @@
           }],
           "responses": {
             "200": {
-              "description": "Get reta by currency code"
+              "description": "Get rate by currency code"
+            }
+          }
+        }
+      },
+      "/rates/download/csv": {
+        "get": {
+          "x-swagger-router-controller": "rates",
+          "operationId": "getAllInCSV",
+          "tags": ["Rates", "CSV"],
+          "summary": "Get all rates in CSV",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Get rates in CSV"
             }
           }
         }
